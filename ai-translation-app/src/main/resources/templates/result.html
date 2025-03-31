@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Translation Results</title>
+</head>
+<body>
+        <h1>Translation Result</h1>h1>
+        <p><strong>From:</strong> <span th:text="${translationResponse.fromLanguage}"></span></p>
+        <p><strong>From:</strong> <span th:text="${translationResponse.toLanguage}"></span></p>
+        <p><strong>Translated Text:</strong></p>
+        <p th:text="${translationResponse.translatedText}"></p>
+        <a href="/" >Back</a>
+
+</body>
+</html>
