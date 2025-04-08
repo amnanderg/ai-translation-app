@@ -2,6 +2,7 @@ package com.translation.ai_translation_app.controller;
 
 import com.translation.ai_translation_app.dto.TranslationRequest;
 import com.translation.ai_translation_app.dto.TranslationResponse;
+import com.translation.ai_translation_app.model.Translation;
 import com.translation.ai_translation_app.service.TranslationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class TranslationController {
@@ -31,5 +34,12 @@ public class TranslationController {
         TranslationResponse response = translationService.translate(translateRequest);
         model.addAttribute("translationResponse", response);
         return "result";
+    }
+
+    @GetMapping("/history")
+    public String getHistory(Model model) {
+        List<Translation> translations = translationService.getAllTranslations();
+        model.addAttribute("translations", translations);
+        return "history";
     }
 }

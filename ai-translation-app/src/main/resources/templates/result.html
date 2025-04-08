@@ -4,14 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Translation Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-        <h1>Translation Result</h1>h1>
-        <p><strong>From:</strong> <span th:text="${translationResponse.fromLanguage}"></span></p>
-        <p><strong>From:</strong> <span th:text="${translationResponse.toLanguage}"></span></p>
-        <p><strong>Translated Text:</strong></p>
-        <p th:text="${translationResponse.translatedText}"></p>
-        <a href="/" >Back</a>
-
+<div class="container mt-5">
+    <h1 class="mb-4"> Translation Result</h1>
+    <div class="card">
+        <div class="card-body">
+            <p><strong>From:</strong> <span th:text="${translationResponse.fromLanguage}"></span></p>
+            <p><strong>From:</strong> <span th:text="${translationResponse.toLanguage}"></span></p>
+            <hr/>
+            <p><strong>Translated Text:</strong></p>
+            <p th:text="${translationResponse.translatedText}"></p>
+        </div>
+    </div>
+    <div class="mt-4">
+        <a href="/" class="btn btn-info ml2">View History</a>
+    </div>
+</div>
 </body>
 </html>

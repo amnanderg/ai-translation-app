@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Translation History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="mb-4">Translation History</h1>
+    <table class="table table-striped">
+        <thead class="thread-dark">
+            <tr>
+                <th>ID</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Original Text</th>
+                <th>Translated Text</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="translation : ${translations}">
+                <td th:text="${translation.id}"></td>
+                <td th:text="${translation.fromLanguage}"></td>
+                <td th:text="${translation.toLanguage}"></td>
+                <td th:text="${translation.originalLanguage}"></td>
+                <td th:text="${translation.translatedText}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/" class="btn btn-primary">Back to Translate</a>
+</div>
+</body>
+</html>
